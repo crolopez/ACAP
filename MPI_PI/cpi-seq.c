@@ -5,11 +5,15 @@
 main(int argc, char **argv)
 {
   double width, sum, mysum;
-  int intervals = 5, i, mynpts;
+  int intervals, i, mynpts;
   int rc, myid, nprocs;
   MPI_Status Stat;
   /* get the number of intervals */
-  //intervals = atoi(argv[1]);
+  if (argc > 2)
+    intervals = atoi(argv[1]);
+  else
+     return -1;
+  
   width = 1.0 / intervals;
   rc = MPI_Init(&argc,&argv);
   //MPI_INIT(ierr);
