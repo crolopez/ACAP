@@ -9,7 +9,12 @@ main(int argc, char **argv)
   int rc, myid, nprocs;
   MPI_Status Stat;
   /* get the number of intervals */
-  //intervals = atoi(argv[1]);
+
+  /*
+  * Feature added by @crolopez
+  *
+  */
+  intervals = atoi(argv[1]);
   width = 1.0 / intervals;
   rc = MPI_Init(&argc,&argv);
   //MPI_INIT(ierr);
@@ -32,4 +37,3 @@ main(int argc, char **argv)
   MPI_Finalize();
   return(0);
 }
-
